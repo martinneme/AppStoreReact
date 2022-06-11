@@ -1,6 +1,6 @@
 # KukiApp - Proyecto Final
 
-Esta aplicación web es una tienda de Relojes realizada sobre el framework de React. Funcionalmente permitirá que el potencial cliente visualice la oferta de productos y cantidad de stock disponible, pueda agregarlos a un carrito de compras y finalizar con el pago de la misma.
+Esta aplicación web es una tienda de Relojes realizada en React. Funcionalmente permitirá que el potencial cliente visualice la oferta de productos y cantidad de stock disponible, pueda agregarlos a un carrito de compras y finalizar con el pago de la misma.
 
 Los productos y las ordenes de compras generadas serán almacenadas en una sus respectivas colecciones de ordenes en Firestore.
 
