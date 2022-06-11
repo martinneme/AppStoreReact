@@ -25,6 +25,7 @@ export default function Checkout({ handleClose, total,clearCart }) {
     date: new Date().toLocaleString(),
     Cart: [...cart],
     total: total,
+    Status:"Generado"
   };
 
   const handleChange = (event) => {
