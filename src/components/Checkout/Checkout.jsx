@@ -27,7 +27,7 @@ export default function Checkout({ handleClose, total,clearCart }) {
     CreditCard:"",
     secretCardNumber:""
   })
-  // const [buttonDisabled,setButtonDisabled] = useState(true)
+
   const ordersCollection = collection(db, "orders");
 
   

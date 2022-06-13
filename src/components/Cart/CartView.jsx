@@ -17,7 +17,7 @@ export default function CartView() {
   useEffect(()=>{
    cart.length ? setEmptyCart(false) : setEmptyCart(true)
    settotalPrice(suma())
-   // eslint-disable-next-line 
+
 },[cart])
 
 const handleClose = () => {
