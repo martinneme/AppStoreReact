@@ -58,8 +58,7 @@ export default function Checkout({ handleClose, total,clearCart }) {
      title: <p>Se genero tu pedido!</p>,
      text:`N°:${id}`,
      confirmButtonColor: '#000000',
-     confirmButtonText: 'Volver al Home',
-     showCloseButton: true
+     confirmButtonText: 'Volver al Home'
    }).then((result) => {
     if (result.isConfirmed) {
       clearCart()
