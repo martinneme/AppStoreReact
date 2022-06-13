@@ -17,9 +17,20 @@ export default function Checkout({ handleClose, total,clearCart }) {
   const { cart } = useContext(cartContext);
   const form = createRef();
   const nav = useNavigate();
-  const [buyerData, setBuyerData] = useState()
+  const [buyerData, setBuyerData] = useState({
+    name:"",
+    lastName:"",
+    Address:"",
+    tel:"",
+    email:"",
+    emailConfirm:"",
+    CreditCard:"",
+    secretCardNumber:""
+  })
+  // const [buttonDisabled,setButtonDisabled] = useState(true)
   const ordersCollection = collection(db, "orders");
 
+  
   const order = {
     buyer: buyerData,
     date: new Date().toLocaleString(),
@@ -28,13 +39,19 @@ export default function Checkout({ handleClose, total,clearCart }) {
     Status:"Generado"
   };
 
+
   const handleChange = (event) => {
+ 
     const { name, value } = event.target;
-    setBuyerData({ ...buyerData, [name]: value });
-  }
+    setBuyerData({ ...buyerData, [name]: value });    
+
+    }
+  
 
   const orderConfirm= (id) =>{
     const MySwal = withReactContent(Swal)
+
+
     
     MySwal.fire({
      icon: 'success',
@@ -49,14 +66,8 @@ export default function Checkout({ handleClose, total,clearCart }) {
       nav(`/`)
     }})
   }
-  const sendOrder = async () => {
-    if (
-      order.buyer.name !== "" &&
-      order.buyer.lastName !== "" &&
-      order.buyer.Address !== "" &&
-      order.buyer.CreditCard !== 0 &&
-      order.buyer.secretCardNumber !== 0
-    ){
+  const sendOrder = async (e) => {
+    e.preventDefault();
   
       addDoc(ordersCollection, order).then(({ id }) => {
         
@@ -77,11 +88,13 @@ export default function Checkout({ handleClose, total,clearCart }) {
         });
       });
 
-
-    } else {
-      alert("Debe completar todos los datos");
-    }
   };
+
+
+  function ButtonTemp ({buttonDisabled,text,onClick,variant,type,className}) {
+  
+    return (<Button  variant={variant}  className={className} type={type }onClick={onClick} disabled={buttonDisabled}>{text}</Button>)
+}
 
   return (
     <>
@@ -90,67 +103,83 @@ export default function Checkout({ handleClose, total,clearCart }) {
           <Modal.Title>Confirmar orden</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form ref={form}>
+          <Form ref={form} onSubmit={sendOrder} >
             <Form.Group className="mb-3" controlId="Name">
-              <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
                 name="name"
-                placeholder=""
+                placeholder="Nombre"
                 autoFocus
                 onChange={handleChange}
-              />
+            required  />
             </Form.Group>
             <Form.Group className="mb-3" controlId="lastName">
-              <Form.Label>Apellido</Form.Label>
               <Form.Control
                 type="text"
                 name="lastName"
-                placeholder=""
+                placeholder="Apellido"
                 autoFocus
                 onChange={handleChange}
-              />
+                required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="address">
-              <Form.Label>Direccion</Form.Label>
               <Form.Control
                 type="text"
                 name="Address"
-                placeholder=""
+                placeholder="Direccion"
                 autoFocus
                 onChange={handleChange}
-              />
+                required/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="tel">
+              <Form.Control
+                type="number"
+                name="tel"
+                placeholder="Telefono"
+                autoFocus
+                onChange={handleChange}
+                required/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Email"
+                autoFocus
+                onChange={handleChange}
+                required/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="emailConfirm">
+              <Form.Control
+                type="email"
+                name="emailConfirm"
+                placeholder="Confirmacion E-mail"
+                autoFocus
+                onChange={handleChange}
+                required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="creditCard">
-              <Form.Label>Tarjeta</Form.Label>
               <Form.Control
-                type="text"
+                type="number"
                 name="CreditCard"
-                placeholder=""
+                placeholder="Tarjeta de Credito/Debito "
                 autoFocus
                 onChange={handleChange}
-              />
+                required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="codSecCreditCard">
-              <Form.Label>Codigo de seguridad</Form.Label>
               <Form.Control
                 type="password"
                 name="secretCardNumber"
-                placeholder=""
+                placeholder="Codigo de seguridad"
                 autoFocus
                 onChange={handleChange}
-              />
-            </Form.Group>
+                required/>
+            </Form.Group> 
+            <ButtonTemp  className="btnVolver" type="button" onClick={handleClose} text="Volver" /> 
+            <ButtonTemp  className="addToCart" type={"submit"} text="Comprar" />
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Volver
-          </Button>
-          <Button variant="primary" onClick={sendOrder}>
-            Comprar
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

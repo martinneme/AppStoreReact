@@ -26,22 +26,28 @@ nav {
     width: 100%;
 }
 
-.navbar-nav{
+.navbar-nav {
     width: 100%;
 }
 
-.btnNav{
+.btnNav {
     text-decoration: none;
     color: #000000;
-    margin-right:1% ;
+    margin-right: 1%;
 }
 
 
 
+form {
+    text-align: center;
+}
 
+form button[type=button] {
+ border: none;
+}
 
-.bg-info{
-background-color: #5DADE2!important;
+.bg-info {
+    background-color: #5DADE2 !important;
 }
 
 .BoxProd {
@@ -67,7 +73,7 @@ h1 {
 
 }
 
-.BtnCart{
+.BtnCart {
     align-self: center;
     width: 40%;
 }
@@ -75,19 +81,20 @@ h1 {
 .cartClass {
     height: auto;
     width: auto;
-    background-color: #5DADE2!important;
-    border: none; 
-    
+    background-color: #5DADE2 !important;
+    border: none;
+
     margin: 1%;
 }
-.badgeClass{
+
+.badgeClass {
     color: #FFFFFF;
-  
+
 
 }
 
-.cartImage{
-    padding:5%;
+.cartImage {
+    padding: 5%;
 }
 
 
@@ -114,33 +121,32 @@ h1 {
     margin: 1%;
 }
 
-.itemFooter{
-   
-    background-color: #ECECEC!important;
+.itemFooter {
+
+    background-color: #ECECEC !important;
 }
 
-.CardProdDetail{
+.CardProdDetail {
     width: 80%;
     margin: auto;
 }
 
-.CardProdDetailBody{
+.CardProdDetailBody {
     display: flex;
-   flex-direction: row!important;
+    flex-direction: row !important;
     width: 100%;
     margin: auto;
 
 }
 
-.card-footer{
- border: none!important;
-    background-color: #ffffff!important;
+.card-footer {
+    border: none !important;
+    background-color: #ffffff !important;
 }
 
-.btnVolver{
-
-    background-color: #ECECEC!important;
-        color: #000000!important;
+.btnVolver {
+    background-color: #ECECEC !important;
+    color: #000000 !important;
 
 }
 
@@ -153,12 +159,12 @@ h1 {
     justify-content: center;
 }
 
-.footerCheckout{
+.footerCheckout {
     border: none;
     display: flex;
     flex-direction: row;
-   justify-content: center;
-   
+    justify-content: center;
+
 }
 
 .itemCountValue {
@@ -172,120 +178,124 @@ h1 {
 }
 
 .prodDetailsImgStyle {
-    width: 30%!important;
-    border-radius: 5px!important;
+    width: 30% !important;
+    border-radius: 5px !important;
     margin-right: 2%;
 }
 
 .prodCartView {
-  text-align: center;
-    width: 10%!important;
-    border-radius: 5px!important;
+    text-align: center;
+    width: 10% !important;
+    border-radius: 5px !important;
     margin-right: 2%;
 }
 
-.CardItemCart{
+.CardItemCart {
     display: flex;
-    flex-direction: row!important;
+    flex-direction: row !important;
     width: 80%;
-    margin:auto;
+    margin: auto;
     padding: 1%;
     align-items: center;
 }
 
-.DeleteItemCartBtn{
-   margin: auto;
-    background-color: red!important;
-    color:white!important;
-    border: none!important;
-    
-  
+.DeleteItemCartBtn {
+    margin: auto;
+    background-color: red !important;
+    color: white !important;
+    border: none !important;
+
+
 }
 
-.CardBtnDelete{
-    border: none!important;
+.CardBtnDelete {
+    border: none !important;
     width: 20%;
 }
 
 
 .spinner {
     margin-top: 10%;
-    color: #000000!important;
+    color: #000000 !important;
 }
 
 
-.details{
+.details {
     margin: 2%;
-    background-color: #FFFFFF!important;
-    color: #000000!important;
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
 }
 
-.noAvailable{
+.noAvailable {
     margin: 2%;
-    background-color: #000000!important;
+    background-color: #000000 !important;
     color: #FFFFFF;
     border: none;
 }
 
-.detailsFooter{
-    background-color: #ECECEC!important;
+.detailsFooter {
+    background-color: #ECECEC !important;
+}
+
+.addToCart {
+    margin: 2%;
+    color: #FFFFFF !important;
+    background-color: #000000 !important;
+    border: none;
 }
 
 
-.btn-primary{
-    border-color: #000000!important;
-}
-
-.btn-primary:hover{
-    color: #ececec !important;;
-    background-color: #000000!important;
-    border-color: #000000!important;
-
+.btn-primary {
+    border-color: #000000 !important;
 }
 
 
-.btnNav:hover{
+.btn-primary:hover {
+    color: #ececec !important;
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+
+}
+
+
+.btnNav:hover {
     color: #5DADE2;
 
 }
 
 
-.navbar-brand,.navbar-nav{
+.navbar-brand,
+.navbar-nav {
     flex-wrap: wrap;
 }
 
-.addToCart{
-    margin: 2%;
-    color: #FFFFFF!important;
-    background-color: #000000!important;
+
+
+.addToCart:hover {
+    background-color: #58D68D !important;
     border: none;
+    color: #000000 !important;
 }
 
-.addToCart:hover{
-    background-color: #58D68D!important;
-  border: none;
-    color: #000000!important;  
+.Footer {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    border: none !important;
+
 }
 
-.Footer{
-    display: flex!important;
-    flex-direction: row!important;
-width: 100%!important;
-border: none!important;
 
-    }
-
-
-.cardFooter{
+.cardFooter {
     background-color: #ECECEC;
-    width: 33%!important;
-    flex-wrap: nowrap!important;
+    width: 33% !important;
+    flex-wrap: nowrap !important;
 
 }
 
-.FooterCP{
-    border: none!important;
-    width: 100%!important;
+.FooterCP {
+    border: none !important;
+    width: 100% !important;
     display: block;
-    background-color: #D8D8D8!important;
+    background-color: #D8D8D8 !important;
 }

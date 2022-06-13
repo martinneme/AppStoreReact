@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { cartContext } from "../../context/CartContext";
 import { Card } from "react-bootstrap";
 import CartEmpty from "./CartEmpty";
-import CartProduct from "./Cartroduct";
+import CartProduct from "./CartProduct";
 import { Button} from "react-bootstrap";
 import Checkout from "../Checkout/Checkout";
 
