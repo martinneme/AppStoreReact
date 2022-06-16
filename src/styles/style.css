@@ -15,7 +15,7 @@
 .App-header {
     display: flex;
     background-color: #ECECEC;
-    height: 10vh;
+    height: 16vh;
     width: 80%;
     margin: auto;
 
@@ -298,4 +298,46 @@ h1 {
     width: 100% !important;
     display: block;
     background-color: #D8D8D8 !important;
+}
+
+
+@media only screen and (max-width: 720px) {
+
+
+    .Products{
+flex-direction: column;
+        justify-content: center;
+    align-content: center;
+    }
+
+.CardProd{
+    width: 80%;
+}
+
+.container{
+    flex-wrap: wrap!important;
+}
+
+.CardProdDetailBody{
+
+    flex-direction: column!important;
+}
+
+.prodDetailsImgStyle,.CardBtnDelete,.DeleteItemCartBtn {
+    width: 100%!important;
+}
+
+.CardProdDetail{
+    margin-top: 2%;
+}
+
+.CardItemCart {
+    flex-direction: column!important;
+}
+
+.prodCartView{
+    width: 50%!important;
+}
+
+
 }
